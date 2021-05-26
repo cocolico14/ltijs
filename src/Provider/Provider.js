@@ -477,6 +477,8 @@ class Provider {
         const iss = params.iss
         provMainDebug('Receiving a login request from: ' + iss)
         let platform
+        console.log('client_id', params.client_id)
+        console.log('iss', iss)
         if (params.client_id) platform = await this.getPlatform(iss, params.client_id)
         else platform = (await this.getPlatform(iss))[0]
 
